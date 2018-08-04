@@ -1,0 +1,65 @@
+<html>
+<head>
+<script type="text/javascript" src="web3.min.js"></script>
+<script src="https://cdn.rawgit.com/ethereumjs/browser-builds/2fb69a714afe092b06645286f14b94f41e5c062c/dist/ethereumjs-tx.js"></script>
+<script>
+var web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io/KNNQ7NoZEhNQ5zpDSZzH'));
+
+// set token source, destination and amount
+var myAddress = "0x04d3cededab4caacb3f48c517d5bf9b6d499d130";
+//jaya var toAddress = "0xaa597b7e8aaffe9f2a187bedb472ef3455957560";
+var toAddress = "0x1f2F991f31582dA2110Fc4Af98E91d4fD3D016E5";  
+	
+var amount = web3.toHex(1e16);
+
+// get transaction count, later will used as nonce
+var count = web3.eth.getTransactionCount(myAddress);
+	
+
+// set your private key here, we'll sign the transaction below
+//var privateKey = new EthJS.Buffer.Buffer('4ab406f4c5509546237968511536907038c3d00bda4d84764166388de8e7791f', 'hex');
+	var privateKey = new EthJS.Buffer.Buffer('31d9c4cb5222e5b27169ea98f5fc5dae63dd4051b04fa551fc28e827a925986f', 'hex');
+// Get abi array here https://etherscan.io/address/0x86fa049857e0209aa7d9e616f7eb3b3b78ecfdb0#code
+var abiArray = [{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"bytes32"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"stop","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"guy","type":"address"},{"name":"wad","type":"uint256"}],"name":"approve","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"owner_","type":"address"}],"name":"setOwner","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"src","type":"address"},{"name":"dst","type":"address"},{"name":"wad","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"dst","type":"address"},{"name":"wad","type":"uint128"}],"name":"push","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"name_","type":"bytes32"}],"name":"setName","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"wad","type":"uint128"}],"name":"mint","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"src","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"stopped","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"authority_","type":"address"}],"name":"setAuthority","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"src","type":"address"},{"name":"wad","type":"uint128"}],"name":"pull","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"wad","type":"uint128"}],"name":"burn","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"bytes32"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"dst","type":"address"},{"name":"wad","type":"uint256"}],"name":"transfer","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"start","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"authority","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"src","type":"address"},{"name":"guy","type":"address"}],"name":"allowance","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"inputs":[{"name":"symbol_","type":"bytes32"}],"payable":false,"type":"constructor"},{"anonymous":true,"inputs":[{"indexed":true,"name":"sig","type":"bytes4"},{"indexed":true,"name":"guy","type":"address"},{"indexed":true,"name":"foo","type":"bytes32"},{"indexed":true,"name":"bar","type":"bytes32"},{"indexed":false,"name":"wad","type":"uint256"},{"indexed":false,"name":"fax","type":"bytes"}],"name":"LogNote","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"authority","type":"address"}],"name":"LogSetAuthority","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"owner","type":"address"}],"name":"LogSetOwner","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"owner","type":"address"},{"indexed":true,"name":"spender","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Approval","type":"event"}];
+
+var contractAddress = '0xe6647c3bf5bfaf4afd1985cdaae8e3eaf97f4b2b';
+//var contract = new web3.eth.Contract(abiArray, contractAddress, {from: myAddress});
+var contract = web3.eth.contract(abiArray).at(contractAddress);
+	
+var coincount = 3;
+var transferamount = coincount *10**18;
+		
+ var rawTransaction = {"from":myAddress, "gasPrice":web3.toHex(2 * 1e9),"gasLimit":web3.toHex(210000),"to":contractAddress,"value":"0x0","data":contract.transfer.getData(toAddress, transferamount, {from: myAddress}),"nonce":web3.toHex(count)};
+	
+	
+	/*var rawTx = {
+  nonce: web3.toHex(count),
+  gasPrice: web3.toHex(2 * 1e9),
+  gasLimit: web3.toHex(210000),
+  to: toAddress,
+  value: '0x00',
+  data: 'hi'
+}*/
+	//ram var transaction = new EthJS.Tx(rawTx);
+	
+ var transaction = new EthJS.Tx(rawTransaction);
+transaction.sign(privateKey);
+	
+
+	
+	
+	web3.eth.sendRawTransaction('0x' + transaction.serialize().toString('hex'));
+
+	
+	/*web3.eth.sendTransaction({ from :myAddress,to : toAddress,  data: "QmPzPr7sTyycaj2CG32JzXApvKndkYftcrVHWuPkvpSxzd" }, function(err, transactionHash) {
+  if (!err)
+    console.log(transactionHash); // "0x7f9fade1c0d57a7af66ab4ead7c2eb7b11a91385"
+});*/
+
+
+</script>
+</head>
+<body>
+</body>
+</html>
+

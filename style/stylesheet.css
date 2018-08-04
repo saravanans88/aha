@@ -1,0 +1,270 @@
+
+
+html,body{
+	font-family:Tahoma;
+}
+
+.webheader{
+	font-weight:bold;	
+	background-color:#1996fa;
+	color:black;
+	font-family:Tahoma;
+	text-align:left;
+	padding:5px 0px 3px 8px;
+	font-size:14px;
+}
+
+.webservfonttxt{
+	font-size:13px;
+}
+
+.dashlink{
+	height:60px;
+	width:100px;
+	background-color:#144182;
+	color:white;
+	cursor:pointer;
+	text-align:center;
+	font-size:12px;
+	font-weight:bold;
+}
+.dashlink:hover{
+	height:60px;
+	width:100px;
+	background-color:black;
+	color:#34a5fa;
+	cursor:pointer;
+	text-align:center;
+	font-size:12px;
+	font-weight:bold;
+}
+.headerlink{
+	color:white;
+	font-size:11px;
+	text-decoration:underline;
+	font-weight:bold;
+}
+.headerlink:hover{
+	color:#c5c5c0;
+	font-size:11px;
+	text-decoration:none;
+	font-weight:bold;
+}
+.logintxt{
+	font-size:13px;
+	font-weight:bold;
+}
+
+.text1{
+	border:0;
+	border:solid black 1px;
+	font-family:arial;
+	font-size:12px;
+	width:220px;
+	height:25px;
+	padding:5px 5px 5px 5px;
+}
+
+.text2{
+	border:0;
+	border:solid black 1px;
+	font-family:arial;
+	font-size:12px;
+	width:220px;
+	height:15px;
+	padding:5px 5px 5px 5px;
+}
+
+.button1{
+	border:solid black 1px;
+	cursor:pointer;
+	font-size:14px;
+	width:90px;
+	height:30px;
+	font-weight:bold;
+	background-color:#82b440;
+	border:solid #144182 1px;
+	color:white;
+	border-radius:5px;
+}
+
+.admintoptxt{
+font-weight:bold;
+font-size:32px;
+font-family:georgia;
+color:#144182;
+}
+
+.font1{
+	font-family:arial;
+	font-size:12px;
+}
+
+ .tabbertabtopprss b {
+
+border-bottom-width: 1px;
+border-top: 1px solid #217c7e;
+border-right: 1px solid #217c7e;
+border-left: 1px solid #217c7e;
+color: black;
+cursor: pointer;
+display: block;
+float: left;
+font-size: 12px;
+font-weight: bold;
+letter-spacing: 1px;
+line-height: 10px;
+padding-bottom: 15px;
+padding-top: 15px;
+text-align: center;
+text-transform: uppercase;
+width: 100%;
+margin-left:3px;
+border-radius:4px;
+}
+
+ .tabbertabtop b {
+
+ background: none repeat scroll 0 0 #f3f3f3;
+border-bottom-width: 1px;
+border-top: 1px solid #217c7e;
+box-shadow: 0 0 1.143em 0 #217c7e inset;
+color: #217c7e;
+display: block;
+float: left;
+font-size: 12px;
+font-weight: bold;
+letter-spacing: 1px;
+line-height: 10px;
+padding-bottom: 15px;
+padding-top: 15px;
+text-align: center;
+text-transform: uppercase;
+width: 100%;
+border-radius:4px;
+margin-left:4px;
+}
+.tabber .tabbertab {
+ padding:5px;
+ border-top:1px solid #217C7E;
+ }
+ 
+ .dispclass{
+	font-size:12px;
+	font-family:arial;
+	width:95%;	
+	border:solid #c7c7c7 1px;
+ }
+.dispclass th{
+	font-size:12px;
+	font-family:arial;
+	background:#4b5056;
+	color:white;
+	padding:4px 4px 4px 4px;
+ }
+ 
+ .fieldsetstyle{
+ 	border:solid black 1px;
+	font-size:14px;
+ }
+ 
+ .button2{
+ width:200px;
+ cursor:pointer;
+ height:40px;
+ }
+ 
+ .select1{
+	width:160px;
+	height:25px;
+	font-size:12px;
+ }
+ 
+ .dispclassfreesize{
+	font-size:12px;
+	font-family:arial;
+	border:solid black 1px;
+ }
+ 
+ .dispclassfreesize th{
+ 	background:black;
+	color:white;
+ }
+ 
+ .topheadertrbg{
+ background-color:#4b5356;
+ height:60px;
+ }
+ 
+  .topheadertd{
+	color:white;font-size:21px;font-weight:bold;padding-left:30px;
+ }
+ 
+ .menubg{
+ background-color:#6f777a;
+ }
+ 
+ .headfont{
+ color:white;font-size:11px;
+ padding-bottom:5px;
+  }
+  
+  .headfont2{
+   font-weight:bold;
+   color:#aeb5bb;
+   font-size:14px;
+   padding-right:15px;
+  }
+  
+  h1{
+   color:#727677;
+  }
+
+  .dispclass tr:nth-child(even) td{
+	background-color:#e5e5e5;
+  }
+  .dispclass tr:nth-child(odd) td{
+	background-color:#f5f5f5;
+  }
+  
+  .dispclass td a{
+   color:#387feb;
+   text-decoration:none;
+   font-size:13px;
+  }
+  .dispclass td a:hover{
+   color:#387feb;
+   text-decoration:underline;
+   font-size:13px;
+  }
+  .mastertable{
+  	font-size:12px;
+	font-family:arial;
+	width:95%;	
+	border:solid #c7c7c7 1px;
+  }
+ .mastertable tr:nth-child(even) td{
+	background-color:#e5e5e5;
+  }
+  .mastertable tr:nth-child(odd) td{
+	background-color:#f5f5f5;
+  }
+  
+  .dashtable{
+  	font-size:12px;
+	font-family:arial;
+	border:solid #c7c7c7 1px;
+  }
+ .dashtable tr:nth-child(even) td{
+	background-color:#e5e5e5;
+  }
+  .dashtable tr:nth-child(odd) td{
+	background-color:#f5f5f5;
+  }
+  .dashtable th{
+	font-size:12px;
+	font-family:arial;
+	background:#4b5056;
+	color:white;
+	padding:4px 4px 4px 4px;
+ }

@@ -1,0 +1,28 @@
+1) Search Function
+i)City
+ii)City+Location
+iii)City+Location+Institute
+iv)school Name
+v)school Name+Pincode
+
+2)School Details
+
+3) Retreive Advt for Desktop
+4) Retrive Advt for Mobile
+
+
+
+
+list of schools in search view 
+
+and school view on nxt page
+
+
+
+
+Bookslounge Mobile app
+
+1) First display logo after login
+2)ajax failed change
+3)Dashboard-> Advertisement call symbol make call
+4)
